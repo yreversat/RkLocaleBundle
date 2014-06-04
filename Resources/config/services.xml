@@ -1,0 +1,24 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="rk_locale.default_target_path" />
+        <parameter key="rk_locale.langs" />
+        <parameter key="rk_locale.domain" />
+    </parameters>
+
+    <services>
+
+        <service id="rk_locale.configure_locale" class="Rk\LocaleBundle\ConfigureLocale\ConfigureLocale">
+            <argument>%rk_locale.default_target_path%</argument>
+            <argument>%rk_locale.langs%</argument>
+        </service>
+
+        <service id="rk_locale.response_listener" class="Rk\LocaleBundle\Listener\ResponseListener">
+            <tag name="kernel.event_listener" event="kernel.response" method="onKernelResponse" />
+            <argument>%rk_locale.domain%</argument>
+        </service>
+
+    </services>
+</container>
