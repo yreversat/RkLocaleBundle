@@ -23,10 +23,5 @@
     "autoload": {
         "psr-0": { "Rk\\LocaleBundle": "" }
     },
-    "target-dir": "Rk/LocaleBundle",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.0-dev"
-        }
-    }
+    "target-dir": "Rk/LocaleBundle"
 }
