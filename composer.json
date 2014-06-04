@@ -15,7 +15,7 @@
         "symfony/framework-bundle": "~2.4"
     },
     "require-dev": {
-        "twig/twig": "~1.5",
+        "twig/twig": "~1.5"
     }
     "autoload": {
         "psr-0": { "Rk\\LocaleBundle": "" }
