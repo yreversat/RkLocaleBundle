@@ -16,7 +16,7 @@
     },
     "require-dev": {
         "twig/twig": "~1.5"
-    }
+    },
     "autoload": {
         "psr-0": { "Rk\\LocaleBundle": "" }
     },
