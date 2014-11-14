@@ -11,8 +11,7 @@ Add RkLocaleBundle by Composer
 ```json
 # composer.json
 require : {
-    "rk/locale-bundle": "dev-master"
-    ...
+    "rk/locale-bundle": "dev-master",
 }
 ```
 Register the bundle in app/AppKernel.php:
@@ -44,6 +43,17 @@ rk_locale:
     default_target_path: rk_webmail_public_index
     domain: example.com
 ```
+
+And in routing file add each route
+
+```yml
+# app/config/parameter.yml
+```
+    prefix:   /{_locale}/
+    requirements:
+        _locale: en|fr
+```
+
 Example in twig 
 -------
 ```twig
