@@ -5,15 +5,17 @@ In construction..
 
 Installation
 ----------
+
+Add RkLocaleBundle by Composer
+
 ```json
 # composer.json
 require : {
-    ...
     "rk/locale-bundle": "dev-master"
     ...
 }
 ```
-
+Register the bundle in app/AppKernel.php:
 ```php
 public function registerBundles()
 {
@@ -22,6 +24,14 @@ public function registerBundles()
         new Rk\LocaleBundle\RkLocaleBundle(),
     );
 }
+```
+
+Add Route at the start routing file
+```yml
+# app/config/routing.yml
+mon_annonce_locale:
+    resource: "@MonAnnonceLocaleBundle/Resources/config/routing.yml"
+    prefix:   /
 ```
 
 
@@ -34,3 +44,12 @@ rk_locale:
     default_target_path: rk_webmail_public_index
     domain: example.com
 ```
+Example in twig 
+-------
+```twig
+{{ render(controller('RkLocaleBundle:Render:listFlag', { 'route' : app.request.attributes.get('_route') })) }}
+```
+
+
+
+
