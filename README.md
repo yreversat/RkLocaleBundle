@@ -3,6 +3,28 @@ RkLocaleBundle
 
 In construction..
 
+Installation
+----------
+```json
+# composer.json
+require : {
+    ...
+    "rk/locale-bundle": "dev-master"
+    ...
+}
+```
+
+```php
+public function registerBundles()
+{
+    return array(
+        // ...
+        new Rk\LocaleBundle\RkLocaleBundle(),
+    );
+}
+```
+
+
 Configuration
 --------
 ```yml
