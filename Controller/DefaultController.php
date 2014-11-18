@@ -43,26 +43,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * Return Html list, only <li> content link with name and image country
-     *
-     * @param $route
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function renderListFlagAction($route)
-    {
-        /* @var \Rk\LocaleBundle\ConfigureLocale\ConfigureLocale $config */
-        $config = $this->container->get('rk_locale.configurelocale');
-
-        $langLiens = [];
-
-        foreach ($config->getLocales() as $langue) {
-            $gets['_locale'] = $langue;
-            $langLiens[$langue] = $this->generateUrl($route, $gets);
-        }
-        return $this->render('RkLocaleBundle::listFlag.html.twig',array('langLiens' => $langLiens));
-    }
-
-    /**
      * Return locale variable language web browser
      *
      * @param $request
